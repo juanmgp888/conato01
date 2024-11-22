@@ -7,6 +7,8 @@ public class Array01{
 
         String[] arregloNombres = {"Pepe","Manolo","Lola","Clara"};
         int[] arregloEnteros = {4,1,8,5,0,4,10,14,2,28,100};
+        int[] arregloEnteros3 = {12,7,8,12};
+        int[] arregloEnteros4 = {8,7,12,12};
 
         System.out.println("Contenido del array01 es una dirección de memoria aprox.: "+arregloNombres); 
         System.out.println("Contenido del array01 usando toString: "+Arrays.toString(arregloNombres));
@@ -45,33 +47,62 @@ public class Array01{
             System.out.println(i);
         }
 
-        // Comparación del tamaño de dos arreglos.Resultados posibles: -1, 0, 1 
-        System.out.println("Comparación del tamaño de dos arreglos: \n"+
-            Arrays.toString(arregloEnteros)+" y "+Arrays.toString(arregloEnteros2)+" \n");
+        // Comparación del tamaño de dos arreglos.Resultados posibles: +1, 0, -1 
+        /* El método Arrays.compare() compara los arreglos de manera lexicográfica:
+
+        ¿Qué hace Arrays.compare()?: Compara los elementos de los arreglos de forma secuencial. 
+        Si encuentra una diferencia en los elementos de las mismas posiciones, retorna:
+        Valor negativo si el primer arreglo es "menor" (en términos lexicográficos).
+        Valor positivo si el primer arreglo es "mayor".
+        Cero si ambos arreglos son iguales en contenido hasta el final del arreglo o hasta donde coincidan.
+        */
+        System.out.println("Comparación de los valores de cada uno de los dos arreglos: \n"+
+        "12 > 8 entonces el arreglo3 es mayor. \n"+
         
-        if (Arrays.compare(arregloEnteros,arregloEnteros2) < 0){ //-1
-            System.out.println("arregloEnteros (el primero) es mayor");
-        } else if (Arrays.compare(arregloEnteros,arregloEnteros2) > 0){ //+1
-            System.out.println("arregloEnteros2 (el segundo)es mayor");
+            Arrays.toString(arregloEnteros3)+" y "+Arrays.toString(arregloEnteros4));
+        
+        if (Arrays.compare(arregloEnteros3,arregloEnteros4) > 0){ //+1
+            System.out.println("arregloEnteros3 (el primero) es mayor\n");
+        } else if (Arrays.compare(arregloEnteros3,arregloEnteros4) < 0){ //-1
+            System.out.println("arregloEnteros4 (el segundo)es mayor\n");
         }
         else { // = 0
-            System.out.println("Ambos arreglos tienen el mismo tamaño");
+            System.out.println("Ambos arreglos tienen el mismo tamaño\n");
         }
 
-        int[] arregloEnteros3 = {2,7,8};
-        int[] arregloEnteros4 = {8,7,2,2};
-        // Comparación con equals. Equals compara el contenido, no el tamaño. Si se repite un elemento...
+
+
+
+        for (int i : arregloEnteros3){
+            System.out.println("Enteros3 : "+i);
+        }
+        for (int i : arregloEnteros4){
+            System.out.println("Enteros4 : "+i);
+        }
+
+        
+        // equals() compara si dos arreglos son exactamente iguales (mismo tamaño, mismos elementos y en el mismo orden).
+        /*        int[] arregloEnteros3 = {12,7,8};
+                  int[] arregloEnteros4 = {8,7,12,12}; */
+
         if (arregloEnteros3.equals(arregloEnteros4)){
             System.out.println("Ambos arreglos tienen el mismo contenido.");
             
         } else {
             System.out.println("Ambos arreglos son de contenido distinto. 'equals'");
+            Arrays.sort(arregloEnteros3);
             Arrays.sort(arregloEnteros4);
             System.out.println("Aplicando 'sort', ordeno y ya son iguales.");
+            for (int i : arregloEnteros3) {
+                System.out.println(i);
+            }
             for (int i : arregloEnteros4) {
                 System.out.println(i);
             }
 
+        }
+        if (arregloEnteros3.equals(arregloEnteros4)){
+            System.out.println("Tras ser ordenados tienen el mismo contenido en el mismo orden.");
         }
     }
 }
