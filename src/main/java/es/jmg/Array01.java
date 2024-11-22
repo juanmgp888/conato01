@@ -57,5 +57,21 @@ public class Array01{
         else { // = 0
             System.out.println("Ambos arreglos tienen el mismo tamaño");
         }
+
+        int[] arregloEnteros3 = {2,7,8};
+        int[] arregloEnteros4 = {8,7,2,2};
+        // Comparación con equals. Equals compara el contenido, no el tamaño. Si se repite un elemento...
+        if (arregloEnteros3.equals(arregloEnteros4)){
+            System.out.println("Ambos arreglos tienen el mismo contenido.");
+            
+        } else {
+            System.out.println("Ambos arreglos son de contenido distinto. 'equals'");
+            Arrays.sort(arregloEnteros4);
+            System.out.println("Aplicando 'sort', ordeno y ya son iguales.");
+            for (int i : arregloEnteros4) {
+                System.out.println(i);
+            }
+
+        }
     }
 }
