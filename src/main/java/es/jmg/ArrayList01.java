@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class ArrayList01 {
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static void main(String[] args) {
-    
+
+   
     // Antes de Java 5 había diferentes maneras de crear un ArrayList
     
     ArrayList lista1 = new ArrayList(); // reserva espacio para un número de slots por defecto y no da valores iniciales

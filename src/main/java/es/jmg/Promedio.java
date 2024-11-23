@@ -1,6 +1,7 @@
 package es.jmg;
 public class Promedio{
 
+    @SuppressWarnings("unused")
     public double calcularPromedio(int[] arregloDado){
         double myAvg=0.0d, myAvgEach = 0.0d;
         int mySuma=0, mySumaConEach = 0;

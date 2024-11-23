@@ -1,12 +1,16 @@
 package es.jmg;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 /*
- * Un Set es una colección que no permite elementos duplicados. Cuando intentas agregar un elemento que ya existe en el Set, este no se agrega. Existen varias implementaciones de la interfaz Set, pero las más comunes son:
+ * Un Set es una colección (y un subinterfaz de Collection) que no permite elementos duplicados. 
+ * Cuando intentas agregar un elemento que ya existe en el Set, este no se agrega. 
+ * Existen varias implementaciones de la interfaz Set, pero las más comunes son:
 
     HashSet: Implementación que no garantiza ningún orden en los elementos. 
              Es eficiente para búsquedas, inserciones y eliminaciones.
@@ -52,6 +56,14 @@ public class Set01 {
         System.out.println(("TreeSet, ordena por orden natural (numérico, alfabético...) "+conjunto3));
         // Aunque se han añadido 5 elementos, el tamaño es 4 (los repetidos no se incluyen en el conjunto).
         System.out.println("Tamaño del LinkedHashSet: "+conjunto3.size());
+
+        // para mostrar un sólo elemento concreto, hace falta recorre el TreeSet
+        // o bien, convertirlo en ArrayList y usar get
+                // Convertimos el TreeSet a una List
+        List<String> list = new ArrayList<>(conjunto3);
+
+        // Accedemos al elemento en la "posición 3"
+        System.out.println("Elemento en la posición 3: " + list.get(2));
     }
 
 }
